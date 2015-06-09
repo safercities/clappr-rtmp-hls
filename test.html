@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <script type="text/javascript" charset="utf-8" src="/dist/clappr.js"></script>
+  <script type="text/javascript" src="rtmp_upstream.js">
+</script>
+  <title>other</title>
+  <script type="text/javascript" charset="utf-8">
+  window.DEBUG = true;
+window.onload = function() {
+  var player = new Clappr.Player({
+    source: 'http://10.101.8.3:1935/live/1921022d12bc12f7ba3616443c020beb.stream/playlist.m3u8?DVR',
+    parentId: '#player-wrapper',
+//    plugins: {'playback': [RTMP]}
+  });
+}
+  </script>
+</head>
+<body>
+  <div id="player-wrapper">
+  </div>
+</body>
+</html>
+
