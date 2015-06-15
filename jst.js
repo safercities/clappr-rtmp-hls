@@ -4,5 +4,7 @@ module.exports = {
 
   CSS: {
     
+      'rtmp_hls': '#rtmp-hls {	width: 100%;	height: 100%;}[data-hls] {	visibility: hidden;}',
+    
   }
 };

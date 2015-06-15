@@ -2,28 +2,24 @@
 <html>
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <script type="text/javascript" charset="utf-8" src="/dist/clappr.js"></script>
+  <script type="text/javascript" charset="utf-8" src="http://localhost:4000/clappr.js"></script>
+  <script type="text/javascript" src="/rtmp.js"></script>
   <script type="text/javascript" charset="utf-8" src="/dist/rtmp_hls.js"></script>
+
   <title>rtmp-hls Test Page</title>
   <script type="text/javascript" charset="utf-8">
+  window.DEBUG = true
 window.onload = function() {
   var player = new Clappr.Player({
-    sources: ['http://www.html5rocks.com/en/tutorials/video/basics/devstories.mp4'],
+    //sources: ['rtmp+hls://test'],
+    //hlsSource: 'http://192.168.179.129:8080/hls/test/index.m3u8',
+    //rtmpSource: 'rtmp://192.168.179.129:1935/live/test',
+    //hlsSource: "http://10.101.8.3:1935/live/1921022d12bc12f7ba3616443c020beb.stream/playlist.m3u8?DVR", 
+	source: 'rtmp://10.101.8.3:1935/live/1921022d12bc12f7ba3616443c020beb.stream',
     parentId: '#player-wrapper',
-
-    //hls: {src: "/hls_test/prog_index.m3u8"},
-	hls: {src: "http://10.101.8.3:1935/live/1921022d12bc12f7ba3616443c020beb.stream/playlist.m3u8?DVR"}, 
-	rtmp: { src: 'rtmp://10.101.8.3:1935/live/1921022d12bc12f7ba3616443c020beb.stream' },
-
-	//hls: {src: "http://192.168.179.129:8080/hls/test/index.m3u8"}, 
-	//rtmp: { src: 'rtmp://192.168.179.129:1935/live/test' },
     
-	log: 'debug',
-
-	src: '/hls_test/prog_index.m3u8',
-
     plugins: {
-      playback: [RtmpHls]
+      playback: [/*RtmpHls,*/ RTMP]
     }
     
   });
